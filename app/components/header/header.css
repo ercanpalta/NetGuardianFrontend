@@ -1,0 +1,44 @@
+#header {
+    height: 8%;
+    width: 100%;
+    background-color: #12486b;
+    align-items: center;
+    position: relative;
+}
+
+#icon-name {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 57px;
+    height: 60px;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#header-icon {
+    border-radius: 313px;
+    height: 35px;
+    width: 35px;
+}
+
+#app-name {
+    text-align: left;
+    font-size: 20px;
+    font-family: Inter;
+    line-height: auto;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+#header-title {
+    font-size: 20px;
+    font-family: Inter;
+    line-height: auto;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

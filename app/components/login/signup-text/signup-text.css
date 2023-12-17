@@ -1,0 +1,26 @@
+.sign-up-text {
+    height: 40px;
+    width: 400px;
+    display: flex;
+    margin-top: 25px;
+}
+
+#dont {
+  text-align: left;
+  vertical-align: top;
+  font-size: 20px;
+  font-family: Inter;
+  line-height: auto;
+  color: #000000;
+}
+
+#create {
+  text-align: left;
+  vertical-align: top;
+  margin-left: 5px;
+  font-size: 20px;
+  font-family: Inter;
+  line-height: auto;
+  text-decoration: underline;
+  color: #000000;
+}

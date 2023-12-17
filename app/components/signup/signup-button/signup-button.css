@@ -1,0 +1,14 @@
+#signup-button {
+    border-radius: 30px;
+    height: 40px;
+    width: 400px;
+    margin-top: 45px;
+    background-color: #12486b;
+}
+
+#signup-b-txt{
+    text-align: center;
+    font-size: 20px;
+    font-family: Inter;
+    color: #ffffff;
+}

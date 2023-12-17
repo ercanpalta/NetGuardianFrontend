@@ -1,13 +1,13 @@
 .sign-up-text {
-    height: 40px;
+    height: 70px;
     width: 400px;
     display: flex;
+    align-items: center;
     margin-top: 25px;
 }
 
 #dont {
   text-align: left;
-  vertical-align: top;
   font-size: 20px;
   font-family: Inter;
   line-height: auto;
@@ -16,7 +16,6 @@
 
 #create {
   text-align: left;
-  vertical-align: top;
   margin-left: 5px;
   font-size: 20px;
   font-family: Inter;

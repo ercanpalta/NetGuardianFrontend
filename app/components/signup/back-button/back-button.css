@@ -1,0 +1,15 @@
+#back-button {
+    border-radius: 30px;
+    height: 40px;
+    width: 400px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+#back-b-txt{
+    text-align: center;
+    font-size: 20px;
+    font-family: Inter;
+    color: #000000;
+}

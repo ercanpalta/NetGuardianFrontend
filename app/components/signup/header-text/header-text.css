@@ -1,0 +1,13 @@
+.header-text {
+    height: 50px;
+    width: 400px;
+}
+
+#new-member {
+    text-align: left;
+    vertical-align: top;
+    font-size: 28px;
+    font-family: K2D;
+    line-height: auto;
+    color: #000000;
+}

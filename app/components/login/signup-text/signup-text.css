@@ -8,8 +8,8 @@
 
 #dont {
   text-align: left;
-  font-size: 20px;
-  font-family: Inter;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: auto;
   color: #000000;
 }
@@ -17,8 +17,8 @@
 #create {
   text-align: left;
   margin-left: 5px;
-  font-size: 20px;
-  font-family: Inter;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: auto;
   text-decoration: underline;
   color: #000000;

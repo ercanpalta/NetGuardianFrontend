@@ -1,4 +1,4 @@
-import "./signup-button.css"
+import "@/app/components/signup/signup-button/signup-button.css"
 
 export default function  SignupButton() {
     return (

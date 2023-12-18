@@ -1,0 +1,13 @@
+#forgot-pass-page {
+    display: flex;
+    width: 100%;
+    height: 92%;
+}
+
+#forgot-pass-field {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+

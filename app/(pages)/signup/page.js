@@ -17,6 +17,7 @@ export default function SignUp() {
                 <InputField type={"password"} >Confirm password</InputField>
                 <SignupButton/>
                 <BackButton/>
+                
             </div>
 
             <Image/>

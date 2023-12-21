@@ -4,6 +4,7 @@ import SignupText from "../../components/login/signup-text/signup-text"
 import ForgotPassword from "../../components/login/forgot-password/forgot"
 import LoginButton from "../../components/login/login-button/login-button"
 import Image from "../../components/login/image/image"
+import Link from "next/link"
 import "./login.css"
 
 export default function Login() {
@@ -15,7 +16,9 @@ export default function Login() {
                 <SignupText/>
                 <InputField type={"text"} >Email</InputField>
                 <InputField type={"password"} >Password</InputField>
-                <ForgotPassword/>
+                <Link href="/forgot-pass">
+                    <ForgotPassword/>
+                </Link>
                 <LoginButton/>
             </div>
 

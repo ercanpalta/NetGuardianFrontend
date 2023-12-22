@@ -1,0 +1,15 @@
+.list-item-titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    width: 100px;
+    text-align: center;
+}

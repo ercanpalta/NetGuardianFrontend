@@ -1,0 +1,10 @@
+.dashboard-container {
+    width: 80%;
+    height: 65%;
+    background-color: #F0F0F0;
+    margin: auto;
+    margin-top: 40px;
+    padding: 30px;
+    border: 2px solid #000000;
+    border-radius: 40px;
+}

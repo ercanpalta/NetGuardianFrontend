@@ -1,0 +1,20 @@
+.wb-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    height: 40px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 40px;
+}
+
+.wblist-item-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    width: 100px;
+    text-align: center;
+}

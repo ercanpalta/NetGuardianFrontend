@@ -1,0 +1,8 @@
+.wblists-page {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+}

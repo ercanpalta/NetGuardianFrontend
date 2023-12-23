@@ -1,0 +1,28 @@
+.blacklist-container {
+    height: 100%;
+    background-color: #F0F0F0;
+    margin-top: 10px;
+    padding: 30px;
+    border: 2px solid #000000;
+    border-radius: 35px;
+}
+
+.blacklist{
+    width: 48%;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+}
+
+.blacklist-header {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.blacklist-text {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}

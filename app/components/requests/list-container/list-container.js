@@ -1,8 +1,8 @@
 import "./list-container.css"
 
-export default function ListContainer({children}) {
+export default function RequestsListContainer({children}) {
     return(
-        <div className="list-container">
+        <div className="requests-list-container">
             {children}
         </div>
     )

@@ -1,7 +1,7 @@
 import RequestsContainer from "@/app/components/requests/container/container"
 import RequestItem from "@/app/components/requests/list-item/request-list-item"
 import RequestItemTitles from "@/app/components/requests/list-item-titles/list-item-titles"
-import ListContainer from "@/app/components/requests/list-container/list-container"
+import RequestsListContainer from "@/app/components/requests/list-container/list-container"
 import "./requests.css"
 
 export default function Requests() {
@@ -26,7 +26,7 @@ export default function Requests() {
         <div className="requests-page">
             <RequestsContainer>
                 <RequestItemTitles/>
-                <ListContainer>
+                <RequestsListContainer>
                     <RequestItem {...params[0]} />
                     <RequestItem {...params[1]} />
                     <RequestItem {...params[0]} />
@@ -37,7 +37,7 @@ export default function Requests() {
                     <RequestItem {...params[1]} />
                     <RequestItem {...params[0]} />
                     <RequestItem {...params[1]} />
-                </ListContainer>
+                </RequestsListContainer>
             </RequestsContainer>
         </div>
     )

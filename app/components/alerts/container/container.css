@@ -1,0 +1,25 @@
+.alerts-container {
+    height: 60%;
+    background-color: #F0F0F0;
+    margin-top: 10px;
+    padding: 30px;
+    border: 2px solid #000000;
+    border-radius: 40px;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+}
+
+.alerts-header {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.alerts-text {
+    font-size: 20px;
+    margin-left: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}

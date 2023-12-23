@@ -1,0 +1,26 @@
+.device-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 140px;
+    height: 150px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
+
+.device-item-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: large;
+    text-align: center;
+}
+
+.device-image {
+    height: 60px;
+    width: 60px;
+    vertical-align: text-bottom;
+}

@@ -5,6 +5,7 @@ import SignUp from './(pages)/signup/page'
 import ForgotPass from './(pages)/forgot-pass/page'
 import BasicHeader from './components/header/header'
 
+
 export default function Home() {
   return (
     <>

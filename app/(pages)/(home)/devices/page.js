@@ -3,47 +3,49 @@ import DeviceItem from "@/app/components/devices/list-item/device-list-item"
 import DevicesListContainer from "@/app/components/devices/list-container/list-container"
 import "./devices.css"
 
-export default function Devices() {
-    let params = [{
-        osName:"Windows",
-        ipAddress:"192.168.0.1"
-    },
-    {   
-        osName:"Linux",
-        ipAddress:"192.168.0.1"
-    },
-    {   
-        osName:"Android",
-        ipAddress:"192.168.0.1"
-    },
-    {   
-        osName:"iOS",
-        ipAddress:"192.168.0.1"
-    },
-    {   
-        osName:"iOSss",
-        ipAddress:"192.168.0.1"
-    }]
+const getData = async () => {
+    const res = await fetch("http://localhost:3004/devices", { cache: 'no-store' })
+    return res.json()
+} 
+
+export default async function Devices() {
+
+    const data = await getData()
+
+    // let params = [{
+    //     osName:"Windows",
+    //     ipAddress:"192.168.0.1"
+    // },
+    // {   
+    //     osName:"Linux",
+    //     ipAddress:"192.168.0.1"
+    // },
+    // {   
+    //     osName:"Android",
+    //     ipAddress:"192.168.0.1"
+    // },
+    // {   
+    //     osName:"iOS",
+    //     ipAddress:"192.168.0.1"
+    // },
+    // {   
+    //     osName:"iOSss",
+    //     ipAddress:"192.168.0.1"
+    // }]
 
     return(
         <div className="alerts-page">
             <DevicesContainer>
                 <DevicesListContainer>
-                    <DeviceItem {...params[0]} />
-                    <DeviceItem {...params[1]} />
-                    <DeviceItem {...params[2]} />
-                    <DeviceItem {...params[3]} />
-                    <DeviceItem {...params[0]} />
-                    <DeviceItem {...params[1]} />
-                    <DeviceItem {...params[2]} />
-                    <DeviceItem {...params[3]} />
-                    <DeviceItem {...params[0]} />
-                    <DeviceItem {...params[1]} />
-                    <DeviceItem {...params[2]} />
-                    <DeviceItem {...params[3]} />
-                    <DeviceItem {...params[0]} />
-                    <DeviceItem {...params[1]} />
-                    <DeviceItem {...params[4]} />
+                    {
+                        data.map(
+                            function(data) {
+                                return(
+                                    <DeviceItem {...data} />
+                                )
+                            }
+                        )
+                    }
                 </DevicesListContainer>
             </DevicesContainer>
         </div>

@@ -39,7 +39,7 @@ export default async function Requests() {
                         data.map(
                             function(data) {
                                 return(
-                                    <RequestItem {...data} />
+                                    <RequestItem {...data} key={data.id}/>
                                 )
                             }
                         )

@@ -41,7 +41,7 @@ export default async function Devices() {
                         data.map(
                             function(data) {
                                 return(
-                                    <DeviceItem {...data} />
+                                    <DeviceItem {...data} key={data.id}/>
                                 )
                             }
                         )

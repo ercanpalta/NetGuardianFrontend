@@ -39,7 +39,7 @@ export default async function WBLists() {
                         whitelist.map(
                             function(data){
                                 return(
-                                    <WBListItem {...data} />
+                                    <WBListItem {...data} key={data.id}/>
                                 ) 
                             }
                         )
@@ -55,7 +55,7 @@ export default async function WBLists() {
                         blacklist.map(
                             function(data){
                                 return(
-                                    <WBListItem {...data} />
+                                    <WBListItem {...data} key={data.id}/>
                                 ) 
                             }
                         )

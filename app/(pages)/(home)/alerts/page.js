@@ -36,7 +36,7 @@ export default async function Alerts() {
                         data.map(
                             function(data) {
                                 return(
-                                    <AlertItem {...data} />
+                                    <AlertItem {...data} key={data.id}/>
                                 )
                             }
                         )

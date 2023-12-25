@@ -5,47 +5,61 @@ import WBListItemTitles from "@/app/components/wblists/list-item-titles/list-ite
 import WBListContainer from "@/app/components/wblists/list-container/list-container"
 import "./wblists.css"
 
-export default function WBLists() {
-    let params = [{
-        ipAddress:"192.168.0.1",
-        date:"07.10.2024"
-    },
-    {
-        ipAddress:"192.168.0.1",
-        date:"07.10.2023"
-    }]
+const getWhites = async () => {
+    const res = await fetch("http://localhost:3004/whitelist", { cache: 'no-store' })
+    return res.json()
+}
+
+const getBlacks = async () => {
+    const res = await fetch("http://localhost:3004/blacklist", { cache: 'no-store' })
+    return res.json()
+} 
+
+export default async function WBLists() {
+
+    const whitelist = await getWhites()
+    const blacklist = await getBlacks()
+
+    // let params = [{
+    //     ipAddress:"192.168.0.1",
+    //     date:"07.10.2024"
+    // },
+    // {
+    //     ipAddress:"192.168.0.1",
+    //     date:"07.10.2023"
+    // }]
 
     return(
         <div className="wblists-page">
             <WhitelistContainer>
                 <WBListItemTitles/>
                 <WBListContainer>
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
+
+                    {
+                        whitelist.map(
+                            function(data){
+                                return(
+                                    <WBListItem {...data} />
+                                ) 
+                            }
+                        )
+                    }
+
                 </WBListContainer>
             </WhitelistContainer>
 
             <BlacklistContainer>
                 <WBListItemTitles/>
                 <WBListContainer>
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
-                    <WBListItem {...params[0]} />
-                    <WBListItem {...params[1]} />
+                    {
+                        blacklist.map(
+                            function(data){
+                                return(
+                                    <WBListItem {...data} />
+                                ) 
+                            }
+                        )
+                    }
                 </WBListContainer>
             </BlacklistContainer>
         </div>

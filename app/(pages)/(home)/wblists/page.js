@@ -2,76 +2,64 @@
 
 import WhitelistContainer from "@/app/components/wblists/white-container/white-container"
 import BlacklistContainer from "@/app/components/wblists/black-container/black-container"
-import WBListItem from "@/app/components/wblists/list-item/wb-list-item"
 import WBListItemTitles from "@/app/components/wblists/list-item-titles/list-item-titles"
 import WBListContainer from "@/app/components/wblists/list-container/list-container"
+import RemoveDialog from "@/app/components/wblists/dialog/remove-dialog"
+import Whitelist from "./whitelist"
+import Blacklist from "./blacklist"
 import "./wblists.css"
-import { useRouter } from "next/navigation"
+import { useState } from "react"
 
-const getWhites = async () => {
-    const res = await fetch("http://localhost:3004/whitelist", { cache: 'no-store' })
-    return res.json()
-}
 
-const getBlacks = async () => {
-    const res = await fetch("http://localhost:3004/blacklist", { cache: 'no-store' })
-    return res.json()
-}
 
-export default async function WBLists() {
-    const router = useRouter()
-
-    const whitelist = await getWhites()
-    const blacklist = await getBlacks()
+export default function WBLists() {
+    
+    const [isVisible, setVisibility] = useState(false)
+    const [selectedItem, setSelectedItem] = useState()
 
     const handleClick = (listName, id, refresh) => {
-        fetch(`http://localhost:3004/${listName}/${id}`, {
-            method: 'DELETE',
-        }).then(refresh())
+        if(!isVisible){
+            setSelectedItem({
+                listName:listName,
+                id:id,
+                refresh:refresh
+            })
+            setVisibility(true)
+        } 
     }
 
-    // let params = [{
-    //     ipAddress:"192.168.0.1",
-    //     date:"07.10.2024"
-    // },
-    // {
-    //     ipAddress:"192.168.0.1",
-    //     date:"07.10.2023"
-    // }]
+    const handleCancel = () => {
+        setVisibility(false)
+        setSelectedItem(null)
+    }
+
+    const handleRemove = (selectedItem) => {
+        fetch(`http://localhost:3004/${selectedItem.listName}/${selectedItem.id}`, {
+            method: 'DELETE',
+        }).then(selectedItem.refresh())
+        setSelectedItem(null)
+        setVisibility(false)
+    }
 
     return(
-        <div className="wblists-page">
-            <WhitelistContainer>
-                <WBListItemTitles/>
-                <WBListContainer>
+        <>
+            <div className="wblists-page">
+                <WhitelistContainer>
+                    <WBListItemTitles/>
+                    <WBListContainer>
+                        <Whitelist handleClick={handleClick}/>
+                    </WBListContainer>
+                </WhitelistContainer>
 
-                    {
-                        whitelist.map(
-                            function(data){
-                                return(
-                                    <WBListItem handleClick={ () => handleClick("whitelist", data.id, router.refresh)} {...data} key={data.id}/>
-                                ) 
-                            }
-                        )
-                    }
-
-                </WBListContainer>
-            </WhitelistContainer>
-
-            <BlacklistContainer>
-                <WBListItemTitles/>
-                <WBListContainer>
-                    {
-                        blacklist.map(
-                            function(data){
-                                return(
-                                    <WBListItem handleClick={ () => handleClick("blacklist", data.id, router.refresh)} {...data} key={data.id}/>
-                                ) 
-                            }
-                        )
-                    }
-                </WBListContainer>
-            </BlacklistContainer>
-        </div>
+                <BlacklistContainer>
+                    <WBListItemTitles/>
+                    <WBListContainer>
+                        <Blacklist handleClick={handleClick}/>
+                    </WBListContainer>
+                </BlacklistContainer>
+            </div>
+            {isVisible ? <RemoveDialog handleCancel={handleCancel} handleRemove={() => handleRemove(selectedItem)}/> : null}
+        </>
+        
     )
 }

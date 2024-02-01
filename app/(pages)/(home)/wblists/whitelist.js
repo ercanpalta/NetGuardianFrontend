@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react"
 import WBListItem from "@/app/components/wblists/list-item/wb-list-item"
-import { useRouter } from "next/navigation"
 
 export default function Whitelist({handleClick}){
-    const router = useRouter()
 
     const [whitelist, setWhitelist] = useState(null)
+
+    const changeData = (id) => {
+        for (let i = 0; i < whitelist.length; i++) { 
+            if (whitelist[i].id === id) { 
+                let spliced = whitelist.splice(i, 1); 
+            } 
+        }
+    }
 
     useEffect(
         () => {         
             fetch("http://localhost:3004/whitelist", { cache: 'no-store' })
             .then((response) => response.json())
             .then(data => setWhitelist(data))  
-        }
+        }, []
     )
 
     return(
@@ -20,7 +26,7 @@ export default function Whitelist({handleClick}){
             {whitelist && whitelist.map(
                 function(data){
                     return(
-                        <WBListItem handleClick={ () => handleClick("whitelist", data.id, router.refresh)} {...data} key={data.id}/>
+                        <WBListItem handleClick={ () => handleClick("whitelist", data.id, () => changeData(data.id))} {...data} key={data.id}/>
                     ) 
                 }
             )}

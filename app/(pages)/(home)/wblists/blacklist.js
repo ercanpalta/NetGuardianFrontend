@@ -6,11 +6,15 @@ export default function Blacklist({handleClick}){
     const [blacklist, setBlacklist] = useState(null)
     
     const changeData = (id) => {
+        // 200 döndükten sonra yeni istek atmadan manuel olarak elimizdeki listeyi güncelliyoruz
+        let arr = [...blacklist]
         for (let i = 0; i < blacklist.length; i++) { 
             if (blacklist[i].id === id) { 
-                let spliced = blacklist.splice(i, 1); 
+                delete arr[i];
+                setBlacklist(arr) 
             } 
         }
+        
     }
     
     useEffect(

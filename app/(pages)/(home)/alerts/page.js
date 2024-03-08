@@ -1,48 +1,56 @@
+"use client"
+
 import AlertsContainer from "@/app/components/alerts/container/container"
-import AlertItem from "@/app/components/alerts/list-item/alert-list-item"
+import Alertlist from "./alertlist"
 import AlertItemTitles from "@/app/components/alerts/list-item-titles/list-item-titles"
 import AlertsListContainer from "@/app/components/alerts/list-container/list-container"
 import "./alerts.css"
+import { useState } from "react"
+import AlertDialog from "@/app/components/alerts/dialogs/alert-dialog"
 
-const getData = async () => {
-    const res = await fetch("http://localhost:3004/alerts", { cache: 'no-store' })
-    return res.json()
-} 
+export default function Alerts() {
+    
+    const [isVisible, setVisibility] = useState(false)
+    const [selectedItem, setSelectedItem] = useState()
 
-export default async function Alerts() {
-    const data = await getData()
+    const handleClick = (listName, id, refresh) => {
+        if(!isVisible){
+            setSelectedItem({
+                listName:listName,
+                id:id,
+                refresh:refresh
+            })
+            setVisibility(true)
+        } 
+    }
 
-    // let params = [{
-    //     alertRisk:"high",
-    //     alertType:"Type",
-    //     ipAddress:"192.168.0.1",
-    //     time:"13:20",
-    //     date:"07.10.2024"
-    // },
-    // {   
-    //     alertRisk:"middle",
-    //     alertType:"Type",
-    //     ipAddress:"192.168.0.1",
-    //     time:"13:20",
-    //     date:"07.10.2024"
-    // }]
+    const handleCancel = () => {
+        setVisibility(false)
+        setSelectedItem(null)
+    }
+
+    const handleAddList = (selectedItem) => {
+        /* Bu kısımda 1 adet istek atılıp alert backend tarafında blackliste yada whiteliste eklenecek
+            ve sonrasında görüntülenmeyecek ama dashboard ta sergilenecek*/
+        fetch(`http://localhost:3004/alerts/${selectedItem.id}?add=${selectedItem.listName}`)
+        .then(response => response.status == 200 ? selectedItem.refresh() : null)
+        setSelectedItem(null)
+        setVisibility(false)
+        console.log("added")
+    }
 
     return(
-        <div className="alerts-page">
-            <AlertsContainer>
-                <AlertItemTitles/>
-                <AlertsListContainer>
-                    {
-                        data.map(
-                            function(data) {
-                                return(
-                                    <AlertItem {...data} key={data.id}/>
-                                )
-                            }
-                        )
-                    }
-                </AlertsListContainer>
-            </AlertsContainer>
-        </div>
+        <>
+            <div className="alerts-page">
+                <AlertsContainer>
+                    <AlertItemTitles/>
+                    <AlertsListContainer>
+                        <Alertlist handleClick={handleClick}/>
+                    </AlertsListContainer>
+                </AlertsContainer>
+            </div>
+            {isVisible ? <AlertDialog handleCancel={handleCancel} handleAddList={() => handleAddList(selectedItem)} listName={selectedItem.listName}/> : null}
+        </>
+        
     )
 }

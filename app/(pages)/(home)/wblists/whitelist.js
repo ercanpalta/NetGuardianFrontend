@@ -6,9 +6,12 @@ export default function Whitelist({handleClick}){
     const [whitelist, setWhitelist] = useState(null)
 
     const changeData = (id) => {
+        // 200 döndükten sonra yeni istek atmadan manuel olarak elimizdeki listeyi güncelliyoruz
+        let arr = [...whitelist]
         for (let i = 0; i < whitelist.length; i++) { 
             if (whitelist[i].id === id) { 
-                let spliced = whitelist.splice(i, 1); 
+                delete arr[i];
+                setWhitelist(arr) 
             } 
         }
     }

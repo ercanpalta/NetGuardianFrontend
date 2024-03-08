@@ -36,7 +36,7 @@ export default function WBLists() {
     const handleRemove = (selectedItem) => {
         fetch(`http://localhost:3004/${selectedItem.listName}/${selectedItem.id}`, {
             method: 'DELETE',
-        }).then(selectedItem.refresh())
+        }).then(response => response.status == 200 ? selectedItem.refresh() : null)
         setSelectedItem(null)
         setVisibility(false)
     }

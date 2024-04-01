@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react"
 import md5 from 'md5';
 import "./signup.css"
+import Verify from "@/app/components/email-verify/container/verify"
 
 export default function SignUp() {
 
@@ -18,6 +19,8 @@ export default function SignUp() {
     const [password1, setPassword1] = useState(null); 
     const [password2, setPassword2] = useState(null); 
     const [hidden, setHidden] = useState([true,true,true,true])
+    const [verification, setVerification] = useState([false,null])
+    const [code, setCode] = useState(null)
 
     const checkInputs = (name, email, password1, password2) => {
         if(name == null) {
@@ -57,6 +60,17 @@ export default function SignUp() {
         position: "top-center"
       });
 
+    const handleVerification = () => {
+        if(code == verification[1]){
+            // TODO: Bu kısımda kod doğru ise success toastu çıkartıp  kısa süre sonra dashboarda yönledireceğiz.
+            setVerification([false,null])
+            setCode(null)
+            notifySuccess()
+        }else{
+            notifyError()
+        }
+    }
+
     const handleSignUp = (name, email, password) => {
         fetch(`http://localhost:3004/signup`, {
                 method: 'POST',
@@ -64,27 +78,33 @@ export default function SignUp() {
                 body: JSON.stringify({ name: name,
                                         email: email,
                                     password: password })
-            }).then(response => response.status == 201 ? notifySuccess() : notifyError())
+            }).then(response => response.status == 201 ? setVerification([true,123456]) : notifyError())
+            // TODO: bu kısımda respontan gelen code u 123456 yerine yazıyoruz.
     }
 
     return(
-        <div id="signup-page">
+        <>
+            <div id="signup-page">
 
-            <div id="signup-field">
-                <HeaderText/>
-                <InputField type={"text"} onChange={event => {setName(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter a name!"} isHidden={hidden[0]}>Name</InputField>
-                <InputField type={"text"} onChange={event => {setEmail(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter a valid email!"} isHidden={hidden[1]}>Email</InputField>
-                <InputField type={"password"} onChange={event => {setPassword1(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter minimum 8 characters!"} isHidden={hidden[2]}>Password</InputField>
-                <InputField type={"password"} onChange={event => {setPassword2(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter the same password!"} isHidden={hidden[3]}>Confirm password</InputField>
-                <SignupButton handleClick={() => checkInputs(name, email, password1, password2)}/>
-                <BackButton/>
-                
+                <div id="signup-field">
+                    <HeaderText/>
+                    <InputField type={"text"} onChange={event => {setName(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter a name!"} isHidden={hidden[0]}>Name</InputField>
+                    <InputField type={"text"} onChange={event => {setEmail(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter a valid email!"} isHidden={hidden[1]}>Email</InputField>
+                    <InputField type={"password"} onChange={event => {setPassword1(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter minimum 8 characters!"} isHidden={hidden[2]}>Password</InputField>
+                    <InputField type={"password"} onChange={event => {setPassword2(event.target.value); setHidden([true,true,true,true])}} errorMessage={"Please enter the same password!"} isHidden={hidden[3]}>Confirm password</InputField>
+                    <SignupButton handleClick={() => checkInputs(name, email, password1, password2)}/>
+                    <BackButton/>
+                    
+                </div>
+
+                <Image/>
+
+                <ToastContainer autoClose={false} />
+
             </div>
 
-            <Image/>
-
-            <ToastContainer autoClose={false} />
-            
-        </div>
+            {verification[0] ? <Verify email={email} handleVerification={handleVerification} handleCodeInput={event => setCode(event.target.value)}/> : null}
+        </>
+        
     )
 }

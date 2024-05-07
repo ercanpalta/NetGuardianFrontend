@@ -28,7 +28,7 @@ export default function SignUp() {
     const router = useRouter()
 
     const checkInputs = (name, email, password1, password2) => {
-        if(name == null) {
+        if(name == null || name.length == 0) {
             setHidden([false,true,true,true])
         }else if(email == null){
             setHidden([true,false,true,true])

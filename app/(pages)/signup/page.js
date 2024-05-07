@@ -12,6 +12,7 @@ import md5 from 'md5';
 import "./signup.css"
 import Verify from "@/app/components/email-verify/container/verify"
 import { useCookies } from 'next-client-cookies';
+import { useRouter } from 'next/navigation'
 
 export default function SignUp() {
 
@@ -24,6 +25,7 @@ export default function SignUp() {
     const [code, setCode] = useState(null)
 
     const cookies = useCookies();
+    const router = useRouter()
 
     const checkInputs = (name, email, password1, password2) => {
         if(name == null) {
@@ -55,23 +57,22 @@ export default function SignUp() {
         return hash
     }
 
-    const notifySuccess = () => toast.success("Success Notification !", {
-        position: "top-center"
+    const notifySuccess = () => toast.success("Success!", {
+        position: "top-center",
+        onClose: () => router.push('/dashboard')
       });
 
-    const notifyError = () => toast.error("Error Notification !", {
+    const notifyError = () => toast.error("Error!", {
         position: "top-center"
       });
 
     const handleVerification = () => {
         if(code == verification[1]){
-            // TODO: Bu kısımda kod doğru ise success toastu çıkartıp  kısa süre sonra dashboarda yönledireceğiz. Cookie kaydı da yapılacak.
             setVerification([false,null])
             setCode(null)
-            notifySuccess()
             cookies.set('token', verification[2])
-            console.log(cookies.get('token'))
-
+            notifySuccess()
+            
         }else{
             notifyError()
         }
@@ -106,7 +107,7 @@ export default function SignUp() {
 
                 <Image/>
 
-                <ToastContainer autoClose={false} />
+                <ToastContainer/>
 
             </div>
 

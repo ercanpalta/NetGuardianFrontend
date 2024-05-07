@@ -11,6 +11,7 @@ import { useState } from "react"
 import md5 from 'md5';
 import "./signup.css"
 import Verify from "@/app/components/email-verify/container/verify"
+import { useCookies } from 'next-client-cookies';
 
 export default function SignUp() {
 
@@ -19,8 +20,10 @@ export default function SignUp() {
     const [password1, setPassword1] = useState(null); 
     const [password2, setPassword2] = useState(null); 
     const [hidden, setHidden] = useState([true,true,true,true])
-    const [verification, setVerification] = useState([false,null])
+    const [verification, setVerification] = useState([false,null]) // hidden boolean - verification code - token
     const [code, setCode] = useState(null)
+
+    const cookies = useCookies();
 
     const checkInputs = (name, email, password1, password2) => {
         if(name == null) {
@@ -62,10 +65,13 @@ export default function SignUp() {
 
     const handleVerification = () => {
         if(code == verification[1]){
-            // TODO: Bu kısımda kod doğru ise success toastu çıkartıp  kısa süre sonra dashboarda yönledireceğiz.
+            // TODO: Bu kısımda kod doğru ise success toastu çıkartıp  kısa süre sonra dashboarda yönledireceğiz. Cookie kaydı da yapılacak.
             setVerification([false,null])
             setCode(null)
             notifySuccess()
+            cookies.set('token', verification[2])
+            console.log(cookies.get('token'))
+
         }else{
             notifyError()
         }
@@ -78,8 +84,9 @@ export default function SignUp() {
                 body: JSON.stringify({ name: name,
                                         email: email,
                                     password: password })
-            }).then(response => response.status == 201 ? setVerification([true,123456]) : notifyError())
+            }).then(response => response.status == 201 ? setVerification([true,123456,'asdfgh']) : notifyError())
             // TODO: bu kısımda respontan gelen code u 123456 yerine yazıyoruz.
+            // TODO: bu kısımda respontan gelen token ı asdfgh yerine yazıyoruz.
     }
 
     return(

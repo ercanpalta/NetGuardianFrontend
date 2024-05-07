@@ -62,9 +62,13 @@ export default function SignUp() {
         onClose: () => router.push('/dashboard')
       });
 
-    const notifyError = () => toast.error("Error!", {
+    const notifyVerifyError = () => toast.error("Verification code is not correct!", {
         position: "top-center"
       });
+
+    const notifyServerError = () => toast.error("Error!", {
+        position: "top-center"
+    });
 
     const handleVerification = () => {
         if(code == verification[1]){
@@ -74,7 +78,7 @@ export default function SignUp() {
             notifySuccess()
             
         }else{
-            notifyError()
+            notifyVerifyError()
         }
     }
 
@@ -85,7 +89,7 @@ export default function SignUp() {
                 body: JSON.stringify({ name: name,
                                         email: email,
                                     password: password })
-            }).then(response => response.status == 201 ? setVerification([true,123456,'asdfgh']) : notifyError())
+            }).then(response => response.status == 201 ? setVerification([true,123456,'asdfgh']) : notifyServerError())
             // TODO: bu kısımda respontan gelen code u 123456 yerine yazıyoruz.
             // TODO: bu kısımda respontan gelen token ı asdfgh yerine yazıyoruz.
     }

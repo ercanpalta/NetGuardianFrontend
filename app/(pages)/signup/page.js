@@ -39,8 +39,8 @@ export default function SignUp() {
         }else if(password2 == null || password1 != password2){
             setHidden([true,true,true,false])
         }else{
-            var encyptedPassword = encryptPassword(password1)
-            handleSignUp(name, email, encyptedPassword)
+            var encryptedPassword = encryptPassword(password1)
+            handleSignUp(name, email, encryptedPassword)
         }
     }
 

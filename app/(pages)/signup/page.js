@@ -21,7 +21,7 @@ export default function SignUp() {
     const [password1, setPassword1] = useState(null); 
     const [password2, setPassword2] = useState(null); 
     const [hidden, setHidden] = useState([true,true,true,true])
-    const [verification, setVerification] = useState([false,null]) // hidden boolean - verification code - token
+    const [verification, setVerification] = useState([false,null,null]) // hidden boolean - verification code - token
     const [code, setCode] = useState(null)
 
     const cookies = useCookies();

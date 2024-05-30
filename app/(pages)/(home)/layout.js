@@ -11,8 +11,10 @@ export default function HomeLayout({ children }) {
   return (
     <>
       <UserHeader/>
-      <TopMenu/>
-      <main>{children}</main>
+      <main>
+        <TopMenu/>
+        {children}
+      </main>
     </>
     
   )

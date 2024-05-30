@@ -1,11 +1,11 @@
 "use client"
 
-import InputField from "../../components/login/input-field/input-field"
-import HeaderText from "../../components/login/header-text/header-text"
-import SignupText from "../../components/login/signup-text/signup-text"
-import ForgotPassword from "../../components/login/forgot-password/forgot"
-import LoginButton from "../../components/login/login-button/login-button"
-import Image from "../../components/login/image/image"
+import InputField from "../../../components/login/input-field/input-field"
+import HeaderText from "../../../components/login/header-text/header-text"
+import SignupText from "../../../components/login/signup-text/signup-text"
+import ForgotPassword from "../../../components/login/forgot-password/forgot"
+import LoginButton from "../../../components/login/login-button/login-button"
+import Image from "../../../components/login/image/image"
 import { useCookies } from 'next-client-cookies';
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';

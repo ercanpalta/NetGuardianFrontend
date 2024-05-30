@@ -42,3 +42,30 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+#icon-user {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 57px;
+    height: 60px;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translate(+50%, -50%);
+}
+
+#user-icon {
+    border-radius: 313px;
+    height: 40px;
+    width: 40px;
+}
+
+#user-name {
+    text-align: left;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: auto;
+    color: #ffffff;
+    margin-right: 5px;
+}

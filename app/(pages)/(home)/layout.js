@@ -1,4 +1,6 @@
 import TopMenu from "@/app/components/top-menu/top-menu"
+import UserHeader from "@/app/components/user-header/user-header"
+import './home.css'
 
 export const metadata = {
   title: 'NetGuardian',
@@ -8,6 +10,7 @@ export const metadata = {
 export default function HomeLayout({ children }) {
   return (
     <>
+      <UserHeader/>
       <TopMenu/>
       <main>{children}</main>
     </>

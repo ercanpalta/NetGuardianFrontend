@@ -50,9 +50,10 @@ export default function Login() {
         return hash
     }
 
-    const notifySuccess = () => toast.success("Success!", {
-        position: "top-center",
-        autoClose: 500,
+    const notifySuccess = () => toast.success("Logging in!", {
+        position: "bottom-right",
+        autoClose: 3000,
+        theme: "dark",
         onClose: () => router.push('/dashboard')
       });
 

@@ -46,7 +46,7 @@
 #icon-user {
     display: inline-flex;
     align-items: center;
-    height: 60px;
+    height: 100%;
     width: auto;
     position: absolute;
     top: 50%;

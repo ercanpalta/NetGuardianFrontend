@@ -1,0 +1,18 @@
+.user-menu {
+    display: inline-flex;
+    flex-direction: column;
+    background: #F0F0F0;
+    width: auto;
+    height: auto;
+    padding: 25px 40px 25px 40px;
+    border-radius: 0px 0px 20px 20px;
+    border: 2px solid black;
+    border-style: none solid solid solid;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    transform: translate(12%, 0%);
+}

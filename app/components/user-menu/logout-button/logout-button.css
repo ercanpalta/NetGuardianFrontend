@@ -1,15 +1,4 @@
-.top-menu {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-}
-
-.item-menu {
+.user-menu-logout-button {
     display: flex;
     align-items: center;
     border-radius: 40px;
@@ -19,6 +8,10 @@
     padding-right: 15px;
     background-color: #ffffff;
     border: 2px solid #000000;
+}
+
+.user-menu-logout-button:hover {
+    background-color: #de0e0e5f;
 }
 
 .text-menu {

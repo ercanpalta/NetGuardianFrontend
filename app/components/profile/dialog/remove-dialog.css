@@ -1,0 +1,57 @@
+#remove-dialog{
+    width: 300px;
+    height: 120px;
+    margin: auto;
+    padding: 2%;
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.remove-dialog-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.remove-dialog-message{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.remove-dialog-remove-button{
+    width: 100px;
+    height: 40px;
+    margin-top: auto;
+    border-radius: 30px;
+    background-color: white;
+    color: #ff0303;
+    border: 2px solid #ff0303;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.remove-dialog-cancel-button{
+    width: 100px;
+    height: 40px;
+    margin-top: auto;
+    border-radius: 30px;
+    background-color: white;
+    border: 2px solid #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}

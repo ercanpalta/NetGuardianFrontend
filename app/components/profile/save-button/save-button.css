@@ -1,0 +1,10 @@
+.save-button{
+    border-radius: 30px;
+    background-color: #4D869C;
+    color: white;
+    font-size: medium;
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 40px;
+}

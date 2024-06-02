@@ -1,0 +1,31 @@
+.change-pass-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 30px;
+    border: 2px solid #000000;
+    border-radius: 35px;
+    align-items: center;
+}
+
+.change-pass{
+    width: 48%;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+}
+
+.change-pass-header {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.change-pass-text {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -37,7 +37,7 @@ export default function  UserHeader() {
         <div id="icon-user" onMouseEnter={() => setShowMenu(true)} onMouseLeave={() => setShowMenu(false)}>
           <p id="user-name">NetGuardian</p>
           <img src="../icons/user.svg" id="user-icon"/>
-          {showMenu ? <UserMenu handleLogout={() => logout()}/> : null}
+          {showMenu ? <UserMenu handleProfile={() => router.push('profile')} handleLogout={() => logout()}/> : null}
         </div>
         <ToastContainer/>
       </div>

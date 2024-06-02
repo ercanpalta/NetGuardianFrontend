@@ -1,0 +1,12 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 80px;
+    gap: 80px;
+}
+
+.charts-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -1,4 +1,4 @@
-.alert-list-item {
+.recent-alert-list-item {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -12,14 +12,14 @@
     border-radius: 40px;
 }
 
-.alert-item-text {
+.recent-alert-item-text {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     width: 200px;
     text-align: center;
 }
 
-.alert-risk-image {
+.recent-alert-risk-image {
     height: 20px;
     width: 20px;
     margin-right: 10px;

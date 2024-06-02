@@ -1,11 +1,12 @@
-.recent-alerts-list-container {
-    height: 200px;
-    width: 220px;
+.status-container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 300px;
     margin-top: 10px;
-    padding: 20px;
     border-radius: 20px;
-    background-color: white;
-    border: 1px solid black;
+    align-items: center;
+    gap: 20px;
 }
 
 .dashboard-title {
@@ -14,7 +15,7 @@
     margin-left: 20px;
 }
 
-.recent-alert-list-dash {
+.status-dash {
     display: flex;
     flex-direction: column;
 }

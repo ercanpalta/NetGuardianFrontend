@@ -1,0 +1,11 @@
+.change-pass-button{
+    border: 2px solid red;
+    background-color: white;
+    border-radius: 30px;
+    color: red;
+    font-size: medium;
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 40px;
+}

@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { CookiesProvider } from 'next-client-cookies/server';
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
-        <main>{children}</main>
+        <CookiesProvider><main>{children}</main></CookiesProvider>;
+        
       </body>
    </html>
     

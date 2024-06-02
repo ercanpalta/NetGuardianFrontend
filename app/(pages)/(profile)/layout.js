@@ -1,5 +1,5 @@
 import UserHeader from "@/app/components/user-header/user-header"
-import './profile.css'
+import './layout.css'
 
 export const metadata = {
   title: 'NetGuardian',

@@ -1,0 +1,32 @@
+.status-card {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 260px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.status-card-image {
+    width: 50px;
+    height: 50px;
+}
+
+.status-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+}
+
+.card-text {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-top: 5px;
+}

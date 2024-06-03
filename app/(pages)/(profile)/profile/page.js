@@ -34,8 +34,8 @@ export default function Profile() {
 
                 <UserInfo>
                     <img className="profile-pic" src="../../icons/profilepic.svg"/>
-                    <InputField type={"text"} onChange={event => {setName(event.target.value); setHidden([true,true,true,true,true])}} errorMessage={"Please enter a name!"} isHidden={hidden[0]}>Name</InputField>
-                    <InputField type={"text"} onChange={event => {setEmail(event.target.value); setHidden([true,true,true,true,true])}} errorMessage={"Please enter a valid email!"} isHidden={hidden[1]}>Email</InputField>
+                    <InputField type={"text"} value={"Netguard Project"}   onChange={event => {setName(event.target.value); setHidden([true,true,true,true,true])}} errorMessage={"Please enter a name!"} isHidden={hidden[0]}>Name</InputField>
+                    <InputField type={"text"} value={"netguard@gmail.com"} onChange={event => {setEmail(event.target.value); setHidden([true,true,true,true,true])}} errorMessage={"Please enter a valid email!"} isHidden={hidden[1]}>Email</InputField>
                     <SaveButton/>
                 </UserInfo>
 

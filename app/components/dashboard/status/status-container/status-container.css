@@ -1,0 +1,21 @@
+.status-container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboard-title {
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+}
+
+.status-dash {
+    display: flex;
+    flex-direction: column;
+}

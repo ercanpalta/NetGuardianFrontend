@@ -1,0 +1,25 @@
+.sparkline-dash {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    width: 440px;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 0px 10px 0px;
+    justify-content: center;
+}
+
+.sparkline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sparkline-title {
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    text-align: center;
+}

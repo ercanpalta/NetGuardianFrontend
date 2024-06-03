@@ -1,0 +1,20 @@
+.recent-alerts-list-container {
+    height: 200px;
+    width: 220px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.dashboard-title {
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+}
+
+.recent-alert-list-dash {
+    display: flex;
+    flex-direction: column;
+}

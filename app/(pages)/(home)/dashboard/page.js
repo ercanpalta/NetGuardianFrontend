@@ -18,9 +18,9 @@ export default function Dashboard() {
 
                 <StatusContainer header={"Status"}>
                     <StatusCard src={"../../icons/network.svg"} header={"Monitoring"} text={`Active`}/>
-                    <StatusCard src={"../../icons/multiple-devices.svg"} header={"Devices"} text={`${50} devices detected`}/>
-                    <StatusCard src={"../../icons/network-card.svg"} header={"Protocols"} text={`${10} protocols used`}/>
-                    <StatusCard src={"../../icons/anylist.svg"} header={"White & Black lists"} text={`${15} IPs added`}/>
+                    <StatusCard src={"../../icons/multiple-devices.svg"} header={"Devices"} text={`${8} devices detected`}/>
+                    <StatusCard src={"../../icons/network-card.svg"} header={"Protocols"} text={`${5} protocols used`}/>
+                    <StatusCard src={"../../icons/anylist.svg"} header={"White & Black lists"} text={`${3} IPs added`}/>
                 </StatusContainer>
 
 
@@ -32,8 +32,8 @@ export default function Dashboard() {
                                 {
                                     data: [
                                         { id: 0, value: 10, label: 'Allowed' },
-                                        { id: 1, value: 15, label: 'Mid Alert' },
-                                        { id: 2, value: 20, label: 'High Alert' },
+                                        { id: 1, value: 4, label: 'Mid Alert' },
+                                        { id: 2, value: 4, label: 'High Alert' },
                                     ],
                                     innerRadius: 40,
                                     outerRadius: 60,
@@ -54,9 +54,9 @@ export default function Dashboard() {
 
 
                 <RecentAlertsListContainer>
-                    <RecentAlertItem alertRisk={"high"} alertType={"TCP SYN Scan"}/>
+                    <RecentAlertItem alertRisk={"high"} alertType={"SSH Brute Force"}/>
+                    <RecentAlertItem alertRisk={"high"} alertType={"SSH Brute Force"}/>
                     <RecentAlertItem alertRisk={"med"} alertType={"TCP SYN Scan"}/>
-                    <RecentAlertItem alertRisk={"high"} alertType={"TCP SYN Scan"}/>
                     <RecentAlertItem alertRisk={"med"} alertType={"TCP SYN Scan"}/>
                 </RecentAlertsListContainer>
 

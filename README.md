@@ -31,7 +31,7 @@ width="400" hspace="10" vspace="10">
 <img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/36e4fbc1-2a04-4dcc-91e3-9190cf5dd33f" align="left"
 width="400" hspace="10" vspace="10" >
 
-<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/016d8f18-b590-4861-949c-a797217052ea" align="left"
+<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/016d8f18-b590-4861-949c-a797217052ea" 
 width="400" hspace="10" vspace="10">
 
 ## Learn More

@@ -71,12 +71,21 @@ export default function Login() {
     }
 
     const handleLogin = (email, password) => {
-        fetch(`http://localhost:3004/login`, {
+        fetch(`http://localhost:3000/login/api?email=${email}&password=${password}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({  email: email,
-                                    password: password })
-            }).then(response => response.status == 201 ? login('asdfgh') : notifyServerError())
+            }).then(
+                response => {
+                    const statusCode = response.status;
+                    
+                    if(statusCode == 200) {
+                        return response.json();
+                    }else{
+                        notifyAuthError();
+                        return Promise.reject('Request failed or returned non-200 status code');
+                    } 
+
+            }).then(json => login(json.id))
             // TODO: bu kısımda respontan gelen token ı asdfgh yerine yazıyoruz.
     }
 

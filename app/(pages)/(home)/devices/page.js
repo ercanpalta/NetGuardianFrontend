@@ -4,7 +4,7 @@ import DevicesListContainer from "@/app/components/devices/list-container/list-c
 import "./devices.css"
 
 const getData = async () => {
-    const res = await fetch("http://localhost:3004/devices", { cache: 'no-store' })
+    const res = await fetch("http://localhost:8080/devices", { cache: 'no-store' })
     return res.json()
 } 
 
@@ -41,7 +41,7 @@ export default async function Devices() {
                         data.map(
                             function(data) {
                                 return(
-                                    <DeviceItem {...data} key={data.id}/>
+                                    <DeviceItem {...data} key={data.ID}/>
                                 )
                             }
                         )

@@ -3,13 +3,13 @@ import "./request-list-item.css"
 export default function RequestItem({...params}) {
     return(
         <div className="request-list-item">
-            <p className="item-text">{params.sourceIp}</p>
-            <p className="item-text">{params.destIp}</p>
-            <p className="item-text">{params.protocol}</p>
-            <p className="item-text">{params.time}</p>
-            <p className="item-text">{params.date}</p>
+            <p className="item-text">{params.SourceIP}</p>
+            <p className="item-text">{params.DestIP}</p>
+            <p className="item-text">{params.Protocol}</p>
+            <p className="item-text">{params.Time}</p>
+            <p className="item-text">{params.Date.substring(0,10).split('-').reverse().join('.')}</p>
             
-            {params.permission == "Allowed" ? (
+            {params.Permission == "Allowed" ? (
                 <p className="item-text">Allowed  <img className="permission-image" src="../../icons/allowed.svg"/></p>
                 
             ) : (

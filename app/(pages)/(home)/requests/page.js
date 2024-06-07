@@ -5,7 +5,7 @@ import RequestsListContainer from "@/app/components/requests/list-container/list
 import "./requests.css"
 
 const getData = async () => {
-    const res = await fetch("http://localhost:3004/requests", { cache: 'no-store' })
+    const res = await fetch("http://localhost:8080/requests", { cache: 'no-store' })
     return res.json()
 } 
 
@@ -39,7 +39,7 @@ export default async function Requests() {
                         data.map(
                             function(data) {
                                 return(
-                                    <RequestItem {...data} key={data.id}/>
+                                    <RequestItem {...data} key={data.ID}/>
                                 )
                             }
                         )

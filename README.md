@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Screenshots of some pages
 
-<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/a7f14486-9332-4446-b508-80f74d6ef121" align="left"
+<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/a7f14486-9332-4446-b508-80f74d6ef121" 
 width="400" hspace="10" vspace="10">
 
 <img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/62811dfa-725b-428d-8e94-79874b3fd727" 

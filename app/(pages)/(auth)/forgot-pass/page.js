@@ -29,11 +29,10 @@ export default function ForgotPass() {
     }
 
     const handleRequest = (email) => {
-        fetch(`http://localhost:3004/forgotpass`, {
+        fetch(`http://localhost:3000/forgot-pass/api?email=${email}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({  email: email })
-            }).then(response => response.status == 201 ? notifyInfo() : notifyServerError())
+            }).then(response => response.status == 200 ? notifyInfo() : notifyServerError())
             // TODO: bu kısımda respontan gelen token ı asdfgh yerine yazıyoruz.
     }
 

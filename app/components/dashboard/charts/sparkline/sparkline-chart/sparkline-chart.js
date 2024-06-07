@@ -3,14 +3,14 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
 
-export default function SparkLine() {
+export default function SparkLine({data}) {
 
   return (
     <Stack sx={{ width: '90%' }}>
         <Box sx={{ flexGrow: 1 }}>
           <SparkLineChart
             plotType="bar"
-            data={[1, 4, 2, 5, 7, 2, 4, 6]}
+            data={data}
             height={100}
             showHighlight={true}
             showTooltip={true}

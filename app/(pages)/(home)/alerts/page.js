@@ -32,8 +32,14 @@ export default function Alerts() {
     const handleAddList = (selectedItem) => {
         /* Bu kısımda 1 adet istek atılıp alert backend tarafında blackliste yada whiteliste eklenecek
             ve sonrasında görüntülenmeyecek ama dashboard ta sergilenecek*/
-        fetch(`http://localhost:3004/alerts/${selectedItem.id}?add=${selectedItem.listName}`)
-        .then(response => response.status == 200 ? selectedItem.refresh() : null)
+        fetch(`http://localhost:3000/alerts/post?id=${selectedItem.id}&list=${selectedItem.listName}`,{
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                }
+        
+        })
+        .then(response => (response.status == 200 ? selectedItem.refresh() : null))
         setSelectedItem(null)
         setVisibility(false)
         console.log("added")

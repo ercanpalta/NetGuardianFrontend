@@ -72,10 +72,16 @@ export default function SignUp() {
 
     const handleVerification = () => {
         if(code == verification[1]){
-            setVerification([false,null])
-            setCode(null)
-            cookies.set('token', verification[2])
-            notifySuccess()
+            fetch(`http://localhost:3000/signup/verify?email=${email}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            }).then(
+                setVerification([false,null]),
+                setCode(null),
+                cookies.set('token', verification[2])
+            ).then(
+                notifySuccess()
+            )
             
         }else{
             notifyVerifyError()
@@ -83,13 +89,11 @@ export default function SignUp() {
     }
 
     const handleSignUp = (name, email, password) => {
-        fetch(`http://localhost:3004/signup`, {
+        fetch(`http://localhost:3000/signup/api?email=${email}&fullName=${name}&password=${password}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: name,
-                                        email: email,
-                                    password: password })
-            }).then(response => response.status == 201 ? setVerification([true,123456,'asdfgh']) : notifyServerError())
+            }).then(response => response.json())
+             .then(json => setVerification([true, json.verificationCode, json.userId]))
             // TODO: bu kısımda respontan gelen code u 123456 yerine yazıyoruz.
             // TODO: bu kısımda respontan gelen token ı asdfgh yerine yazıyoruz.
     }

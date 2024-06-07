@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import AlertItem from "@/app/components/alerts/list-item/alert-list-item";
 
@@ -10,7 +12,7 @@ export default function Alertlist({handleClick}) {
         let arr = [...alertlist]
         for (let i = 0; i < alertlist.length; i++) { 
             if (alertlist[i].id === id) { 
-                delete arr[i];
+                arr.splice(i,1);
                 setAlertlist(arr)
             } 
         }
@@ -18,9 +20,10 @@ export default function Alertlist({handleClick}) {
 
     useEffect(
         () => {         
-            fetch("http://localhost:3004/alerts", { cache: 'no-store' })
+            fetch("http://localhost:3000/alerts/api", { cache: 'no-store' })
             .then((response) => response.json())
-            .then(data => setAlertlist(data))  
+            .then(json => setAlertlist(json.data))
+            .catch((error) => console.log(error));  
         }, []
     )
 
@@ -30,9 +33,9 @@ export default function Alertlist({handleClick}) {
                 function(data){
                     return(
                         <AlertItem 
-                            handleWhiteClick={ () => handleClick("whitelist", data.id, () => changeData(data.id))}
-                            handleBlackClick={ () => handleClick("blacklist", data.id, () => changeData(data.id))}
-                             {...data} key={data.id}/>
+                            handleWhiteClick={ () => handleClick("whitelist", data.ID, () => changeData(data.ID))}
+                            handleBlackClick={ () => handleClick("blacklist", data.ID, () => changeData(data.ID))}
+                             {...data} key={data.ID}/>
                     ) 
                 }
             )}

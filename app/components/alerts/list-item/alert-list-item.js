@@ -5,7 +5,7 @@ import WhitelistButton from "../buttons/whitelist-button"
 export default function AlertItem({handleWhiteClick, handleBlackClick,  ...params}) {
     return(
         <div className="alert-list-item">
-            {params.AlertRisk == "high" ? (
+            {params.AlertRisk == "High" ? (
                 <p className="alert-type-text"><img className="alert-risk-image" src="../../icons/red-circle.svg"/>{params.AlertType}</p>
             ):(
                 <p className="alert-type-text"><img className="alert-risk-image" src="../../icons/orange-circle.svg"/>{params.AlertType}</p>

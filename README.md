@@ -25,10 +25,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 <img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/a7f14486-9332-4446-b508-80f74d6ef121" align="left"
 width="400" hspace="10" vspace="10">
 
-<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/62811dfa-725b-428d-8e94-79874b3fd727" align="left"
+<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/62811dfa-725b-428d-8e94-79874b3fd727" 
 width="400" hspace="10" vspace="10">
 
-<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/36e4fbc1-2a04-4dcc-91e3-9190cf5dd33f" align="left"
+<img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/36e4fbc1-2a04-4dcc-91e3-9190cf5dd33f" 
 width="400" hspace="10" vspace="10" >
 
 <img src="https://github.com/ercanpalta/NetGuardianFrontend/assets/105887606/016d8f18-b590-4861-949c-a797217052ea" 
